@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    </head><body><script>
+    function sound(){
+    var msg = new SpeechSynthesisUtterance('hello');
+   // var myLang = speechSynthesisUtteranceInstance.lang;
+msg.lang = 'en';
+  //  speechSynthesis.onvoiceschanged = function () {
+  //var voices = this.getVoices();
+  //console.log(voices);
+//};
+window.speechSynthesis.speak(msg);</script>
+    }
+    </body>
+</html>

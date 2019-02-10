@@ -1,0 +1,175 @@
+.left{
+	position: absolute;
+	top: 50px;
+	width: 70%;
+	left: 0px;
+	bottom: 0px;
+	z-index: 100;
+	overflow-y: scroll;
+}
+.left::-webkit-scrollbar{
+	width: 0px;
+}
+.right{
+	position: absolute;
+	top: 50px;
+	width: 30%;
+	right: 0px;
+	bottom: 0px;
+}
+.right::-webkit-scrollbar{
+	width: 0px;
+}
+.row{
+	position: relative;
+	left: 15px;
+	width: 100%;
+}
+.feedHeading{
+	position: relative;
+	height: auto;
+}
+.feedContent{
+	position: relative;
+	height: auto;
+	top: 0px;
+}
+.feedContent #feedimg{
+	margin-top: 5px;
+}
+.feedResponse{
+	position: relative;
+	height: 50px;
+	top: 10px;
+}
+.feed{
+	margin-top: 5px;
+	box-shadow: 2px 2px 10px rgba(200,200,200,1);
+}
+.userpic{
+	display: inline-block;
+	position: relative;
+	left: 10px;
+	top: 5px;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background-color: #f3f3f3;
+	background-image: url(https://cdn1.iconfinder.com/data/icons/freeline/32/account_friend_human_man_member_person_profile_user_users-256.png);
+	background-size: cover;
+}
+.username{
+	display: inline-block;
+	position: relative;
+	left: 20px;
+	top: -7px;
+	height: 40px;
+	width: auto;
+	min-width: 30px;
+	font-weight: 600;
+	line-height: 40px;
+}
+.usertitle{
+	display: inline-block;
+	position: relative;
+	left: 25px;
+	top: -7px;
+	height: 40px;
+	width: auto;
+	min-width: 30px;
+	line-height: 40px;
+	font-weight: 600;
+}
+.feedtext{
+	position: relative;
+	height: auto;
+}
+.feedResponse{
+	position: relative;
+	height: 60px;
+}
+.feedResponse .commentNav, .translateNav, .upvoteNav{
+	text-align: center;
+	line-height: 40px;
+	box-shadow: 2px 2px 5px rgba(200,200,200,1);
+	font-weight: 600;
+	border: 2px solid white;
+	position: relative;
+}
+.readcomment{
+	display: none;
+}
+.comuserpic{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background-color: #f3f3f3;
+}
+.eachcomment{
+	margin-bottom: 5px;
+}
+.postcomment{
+	margin-bottom: 7px;
+}
+#commenttext{
+	resize: none;
+}
+
+#post{
+	background-color: white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	box-shadow: 2px 2px 10px rgba(200,200,200,1);
+}
+#post textarea{
+	resize: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#postdetails .form-control{
+	padding: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.postnav{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	box-shadow: 2px 2px 10px rgba(200,200,200,1);
+	border-radius: 5px;
+	border: 2px solid white;
+	
+}
+#media{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	border: 1px solid;
+	display: none;
+}
+#hidden{
+	display: block;
+}
+.translatePopup{
+	display: none;
+	position: absolute;
+	height: 50px;
+	width: 150px;
+	right: 220px;
+	bottom: 80px;
+	background-color: white;
+	z-index: 100;
+}
+.translatePopup #languages{
+	margin-top: 10%;
+}
+.userid{
+	display: none;
+}
+#com1{
+	display: block;
+}

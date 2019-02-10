@@ -1,0 +1,21 @@
+#navd{
+    box-shadow: 5px;
+    width: 100px;
+   background-color: lightslategray;
+    height: 100%;
+   left: 0px;
+    right: 5px;
+    top: 1px;
+    display: none;
+    position: relative;
+    border: 1px solid;
+    
+}
+#menu{
+    height:7%;
+    width:3%;
+}
+
+.s{color: aliceblue;
+    text-decoration:none; 
+}

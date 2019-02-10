@@ -1,0 +1,50 @@
+<html>
+    <head>
+    <title>
+        speech to text</title>
+        <script>
+            function startButton(event) {
+  final_transcript = '';
+  recognition.lang = "en";
+  recognition.start();
+            }
+        if (!('webkitSpeechRecognition' in window)) {
+  upgrade();
+} else {
+    
+            var interim_transcript = '';
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+
+  //recognition.onstart = function() { ... }
+  recognition.onresult = function(event) {
+    
+
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+          document.getElementById("in").value+=interim_transcript;
+          interim_transcript="";
+          //setTimeout(2000);
+      }
+    }
+      
+      //startButton();
+    //startButton();
+  //  final_span.innerHTML = linebreak(final_transcript);
+    //interim_span.innerHTML = linebreak(interim_transcript);
+  };
+}
+ // recognition.onerror = function(event) { ... }
+ // recognition.onend = function() { ... }
+  </script>
+    </head>
+    <body>
+        <button id="start" onclick="startButton()">start</button>
+        <input type="text" id="in">text appears here...
+        
+    </body>
+</html>

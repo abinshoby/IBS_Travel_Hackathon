@@ -1,0 +1,43 @@
+<html><head>
+    <link rel="stylesheet" href="style.css">
+   <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+</head>
+    <body>
+        <img src="https://cdn1.iconfinder.com/data/icons/basic-ui-7/100/Artboard_24-512.png" id="menu">
+        
+        <div id="navd">
+            <nav id ="navi">
+            
+        <ul >
+            <li style="display:block;" ><a href="#" class='s'>home</a></li>
+            <li style="display:block;"><a href="#" class='s'>library</a></li></ul></nav></div>
+        <script>
+            $(document).ready(function(){ $('#test').click(function(){
+                alert("hello");
+                $(this).hide();
+            });$("#menu").click(function(){
+                $("#navd").toggle(500);
+                
+            });
+                                        });
+            var menutrigger=false;
+            $(document).keypress(function(e){
+                if(e.which==13){
+                    if(menutrigger===false){
+$("nav").fadeIn(500);
+                    menutrigger=true;}
+                    else if(menutrigger===true){
+$("nav").fadeOut(500);
+                    menutrigger=false;
+                    }
+                }
+            });
+           
+        </script>
+         <p id="test">your text here</p>
+        
+   </body>
+</html>

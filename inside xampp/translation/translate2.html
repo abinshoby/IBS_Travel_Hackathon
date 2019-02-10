@@ -1,0 +1,195 @@
+
+
+
+<html>
+    <head><script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+     <script>
+            function startButton(event) {
+  final_transcript = '';
+  recognition.lang = "en";
+  recognition.start();
+            }
+        if (!('webkitSpeechRecognition' in window)) {
+  upgrade();
+} else {
+    
+            var interim_transcript = '';
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+
+  //recognition.onstart = function() { ... }
+  recognition.onresult = function(event) {
+    
+
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+          document.getElementById("text").value+=interim_transcript;
+          interim_transcript="";
+             // alert("dsdssd")
+            //var x = $("#to").val();
+            //var y = $("#text").val();
+            //$("#out").load("#",{
+              //  to: x,
+              //  text: y
+           // });
+          //setTimeout(2000);
+      }
+    }
+      
+      //startButton();
+    //startButton();
+  //  final_span.innerHTML = linebreak(final_transcript);
+    //interim_span.innerHTML = linebreak(interim_transcript);
+  };
+}
+ // recognition.onerror = function(event) { ... }
+ // recognition.onend = function() { ... }
+  </script></head>
+<body>
+<button id="start" onclick="startButton()">start</button>
+<form action="translate.php" method="POST" id="myform">
+Translate <input type="text" id="text">
+    
+    To:<select id="to">
+        <option>English</option>
+       
+        <option>Hindi</option>
+        
+        <option>Tamil</option>
+        <option>Telugu</option>
+        <option>Japanese</option>
+        <option>Albanian</option>
+<option>Amharic</option>
+<option>Arabic</option>
+<option>Armenian</option>
+<option>Azeerbaijani</option>
+<option>Basque</option>
+<option>Belarusian</option>
+<option>Bengali</option>
+<option>Bosnian</option>
+<option>Bulgarian</option>
+<option>Catalan</option>
+<option>Cebuano</option>
+<option>Chinese (Simplified)</option>
+<option>Chinese (Traditional)</option>
+<option>Corsican</option>
+<option>Croatian</option>
+<option>Czech</option>
+<option>Danish</option>
+<option>Dutch</option>
+<option>English</option>
+<option>Esperanto</option>
+<option>Estonian</option>
+<option>Finnish</option>
+<option>French</option>
+<option>Frisian</option>
+<option>Galician</option>
+<option>Georgian</option>
+<option>German</option>
+<option>Greek</option>
+<option>Gujarati</option>
+<option>Haitian Creole</option>
+<option>Hausa</option>
+<option>Hawaiian</option>
+<option>Hebrew</option>
+<option>Hindi</option>
+<option>Hmong</option>
+<option>Hungarian</option>
+<option>Icelandic</option>
+<option>Igbo</option>
+<option>Indonesian</option>
+<option>Irish</option>
+<option>Italian</option>
+<option>Japanese</option>
+<option>Javanese</option>
+<option>Kannada</option>
+<option>Kazakh</option>
+<option>Khmer</option>
+<option>Korean</option>
+<option>Kurdish</option>
+<option>Kyrgyz</option>
+<option>Lao</option>
+<option>Latin</option>
+<option>Latvian</option>
+<option>Lithuanian</option>
+<option>Luxembourgish</option>
+<option>Macedonian</option>
+<option>Malagasy</option>
+<option>Malay</option>
+<option>Malayalam</option>
+<option>Maltese</option>
+<option>Maori</option>
+<option>Marathi</option>
+<option>Mongolian</option>
+<option>Myanmar (Burmese)</option>
+<option>Nepali</option>
+<option>Norwegian</option>
+<option>Nyanja (Chichewa)</option>
+<option>Pashto</option>
+<option>Persian</option>
+<option>Polish</option>
+<option>Portuguese (Portugal, Brazil)</option>
+<option>Punjabi</option>
+<option>Romanian</option>
+<option>Russian</option>
+<option>Samoan</option>
+<option>Scots Gaelic</option>
+<option>Serbian</option>
+<option>Sesotho</option>
+<option>Shona</option>
+<option>Sindhi</option>
+<option>Sinhala (Sinhalese)</option>
+<option>Slovak</option>
+<option>Slovenian</option>
+<option>Somali</option>
+<option>Spanish</option>
+<option>Sundanese</option>
+<option>Swahili</option>
+<option>Swedish</option>
+<option>Tagalog (Filipino)</option>
+<option>Tajik</option>
+<option>Tamil</option>
+<option>Telugu</option>
+<option>Thai</option>
+<option>Turkish</option>
+<option>Ukrainian</option>
+<option>Urdu</option>
+<option>Uzbek</option>
+<option>Vietnamese</option>
+<option>Welsh</option>
+<option>Xhosa</option>
+<option>Yiddish</option>
+<option>Yoruba</option>
+<option>Zulu</option>
+    
+    </select>
+<script>
+//function do1(event){
+   // $(document).ready(function(){
+      //  $("#myform").submit(function(event){
+			//event.preventDefault();
+         //   alert("dsdssd")
+         //   var x = $("#to").val();
+            //var y = $("#text").val();
+            //$("#out").load("#",{
+             //   to: x,
+              //  text: y
+          //  });
+       // });
+//	});
+//}
+</script>
+<input type="submit" name="sub">
+<label id="out"></label>
+</form>
+
+</body>
+</html>
+

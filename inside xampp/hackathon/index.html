@@ -1,0 +1,473 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<div class="loader"></div>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+	
+	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	
+	<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+	
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+   
+<script>
+try {
+  var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var recognition = new SpeechRecognition();
+}
+catch(e) {
+  console.error(e);
+  alert("Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Website In Google Chrome.");
+}
+var noteTextarea = $('#query');
+var noteContent = '';
+recognition.continuous = true;
+recognition.onresult = function(event) {
+  var current = event.resultIndex;
+  var transcript = event.results[current][0].transcript;
+
+  var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
+
+  if(!mobileRepeatBug) {
+    noteContent += transcript;
+    $("#query").val(noteContent);
+  }
+};
+function record(e) {
+  if (noteContent.length) {
+    noteContent += ' ';
+  }
+  recognition.start();
+};	
+noteTextarea.on('input', function() {
+  noteContent = $(this).val();
+})
+$('.submitSearch').on('click', function(e) {
+  recognition.stop(); 
+})
+</script>
+	
+	
+	<script>
+		function click_search(){
+			$("#search_li").css({"display":"none"})
+			$("#search_form").css({"display":"block"})
+		}
+		function hide_loader(){
+			$(".loader").hide();
+		}
+		function exit(){
+			$("#search_li").css({"display":"inline-block"})
+			$("#search_form").css({"display":"none"})
+		}
+	</script>	
+</head>
+<body onload="hide_loader()">
+	<div class="coating"><div id="opaque"></div></div>
+     <script>
+                var lang= []; // create an empty array
+                lang["Afrikaans"]=	'af';
+                lang["Albanian"]=	'sq';
+                lang["Amharic"]=	'am';
+                lang["Arabic"]=	'ar';
+                lang["Armenian"]=	'hy';
+                lang["Azeerbaijani"]=	'az';
+                lang["Basque"]=	'eu';
+                lang["Belarusian"]=	'be';
+                lang["Bengali"]=	'bn';
+                lang["Bosnian"]	='bs';
+                lang["Bulgarian"]='bg';
+                lang["Catalan"]='ca';
+                lang["Cebuano"]='ceb(ISO-639-2)';
+                lang["Chinese (Simplified)"]=	'zh-CN (BCP-47)';
+                lang["Chinese (Traditional)"]='zh-TW (BCP-47)';
+                lang["Corsican"]='co';
+                lang["Croatian"]=	'hr';
+                lang["Czech"]='cs';
+                lang["Danish"]=	'da';
+                lang["Dutch"]='nl';
+                lang["English"]='en';
+                lang["Esperanto"]='eo';
+                lang["Estonian"]=	'et';
+                lang["Finnish"]='fi';
+                lang["French"]=	'fr';
+                lang["Frisian"]='fy';
+                lang["Galician"]='gl';
+                lang["Georgian"]='ka';
+                lang["German"]= 'de';
+                lang["Greek"]='el';
+                lang["Gujarati"]=	'gu';
+                lang["Haitian Creole"]=	'ht';
+                lang["Hausa"]=	'ha';
+                lang["Hawaiian"]=	'haw (ISO-639-2)';
+                lang["Hebrew"]='iw';
+                lang["Hindi"]=	'hi';
+                lang["Hmong"]='hmn (ISO-639-2)';
+                lang["Hungarian"]=	'hu';
+                lang["Icelandic"]='is';
+                lang["Igbo"]=	'ig';
+                lang["Indonesian"]=	'id';
+                lang["Irish"]='ga';
+                lang["Italian"]=	'it';
+                lang["Japanese"]='ja';
+                lang["Javanese"]='jw';
+                lang["Kannada"]='kn';
+                lang["Kazakh"]='kk';
+                lang["Khmer"]='km';
+                lang["Korean"]=	'ko';
+                lang["Kurdish"]='ku';
+                lang["Kyrgyz"]=	'ky';
+                lang["Lao"]='lo';
+                lang["Latin"]=	'la';
+                lang["Latvian"]='lv';
+                lang["Lithuanian"]=	'lt';
+                lang["Luxembourgish"]=	'lb';
+                lang["Macedonian"]=	'mk';
+                lang["Malagasy"]='mg';
+                lang["Malay"]=	'ms';
+                lang["Malayalam"]='ml';
+                lang["Maltese"]=	'mt';
+                lang["Maori"]='mi';
+                lang["Marathi"]=	'mr';
+                lang["Mongolian"]='mn';
+                lang["Myanmar (Burmese)"]=	'my';
+                lang["Nepali"]='ne';
+                lang["Norwegian"]=	'no';
+                lang["Nyanja (Chichewa)"]='ny';
+                lang["Pashto"]=	'ps';
+                lang["Persian"]='fa';
+                lang["Polish"]=	'pl';
+                lang["Portuguese (Portugal; Brazil)"]=	'pt';
+                lang["Punjabi"]=	'pa';
+                lang["Romanian"]=	'ro';
+                lang["Russian"]=	'ru';
+                lang["Samoan"]=	'sm';
+                lang["Scots Gaelic"]=	'gd';
+                lang["Serbian"]='sr';
+                lang["Sesotho"]=	'st';
+                lang["Shona"]='sn';
+                lang["Sindhi"]=	'sd';
+                lang["Sinhala (Sinhalese)"]='si';
+                lang["Slovak"]=	'sk';
+                lang["Slovenian"]='sl';
+                lang["Somali"]=	'so';
+                lang["Spanish"]='es';
+                lang["Sundanese"]=	'su';
+                lang["Swahili"]='sw';
+                lang["Swedish"]=	'sv';
+                lang["Tagalog (Filipino)"]='tl';
+                lang["Tajik"]='tg';
+                lang["Tamil"]='ta';
+                lang["Telugu"]=	'te';
+                lang["Thai"]='th';
+                lang["Turkish"]=	'tr';
+                lang["Ukrainian"]='uk';
+                lang["Urdu"]='ur';
+                lang["Uzbek"]='uz';
+                lang["Vietnamese"]=	'vi';
+                lang["Welsh"]='cy';
+                lang["Xhosa"]=	'xh';
+                lang["Yiddish"]='yi';
+                lang["Yoruba"]=	'yo';
+                lang["Zulu"]='zu';
+</script>
+	
+           
+<script>
+    var recognition;
+            function startButton(event) {
+                var x = $("#from").val();
+               
+
+               
+            
+            
+              
+  final_transcript = '';
+                // console.log(lang[x]); 
+  recognition.lang = lang[x];
+  recognition.start();
+            }
+        if (!('webkitSpeechRecognition' in window)) {
+  upgrade();
+} else {
+    
+            var interim_transcript = '';
+   recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+
+  //recognition.onstart = function() { ... }
+  recognition.onresult = function(event) {
+    
+
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+          document.getElementById("text").value=interim_transcript;
+          interim_transcript="";
+            
+      }
+    }
+      
+
+  };
+}
+ // recognition.onerror = function(event) { ... }
+  //recognition.onend = function() {... }
+  </script>	
+           
+            
+          
+  <script>
+    $(document).ready(function(){
+        recognition.stop();
+        recognition.abort();
+      $("#submit").click(function(event){
+         
+         event.preventDefault();
+         var x = $("#to").val();
+         var y = $("#text").val();
+         $("#result").load("translate.php",{
+             text: y,
+             to: x
+             
+         });
+          
+       
+               
+     }) 
+         
+    });
+      
+  </script>
+
+       
+            
+       
+            <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <form action="" method="post" id="myform">
+                            <h6>FROM:</h6>
+                            <select id="from" class="form-control">
+        <option>English</option>
+       
+        <option>Hindi</option>
+        
+        <option>Tamil</option>
+        <option>Telugu</option>
+        <option>Japanese</option>
+        <option>Albanian</option>
+<option>Amharic</option>
+<option>Arabic</option>
+<option>Armenian</option>
+<option>Azeerbaijani</option>
+<option>Basque</option>
+<option>Belarusian</option>
+<option>Bengali</option>
+<option>Bosnian</option>
+<option>Bulgarian</option>
+<option>Catalan</option>
+<option>Cebuano</option>
+<option>Chinese (Simplified)</option>
+<option>Chinese (Traditional)</option>
+<option>Corsican</option>
+<option>Croatian</option>
+<option>Czech</option>
+<option>Danish</option>
+<option>Dutch</option>
+<option>English</option>
+<option>Esperanto</option>
+<option>Estonian</option>
+<option>Finnish</option>
+<option>French</option>
+<option>Frisian</option>
+<option>Galician</option>
+<option>Georgian</option>
+<option>German</option>
+<option>Greek</option>
+<option>Gujarati</option>
+<option>Haitian Creole</option>
+<option>Hausa</option>
+<option>Hawaiian</option>
+<option>Hebrew</option>
+<option>Hindi</option>
+<option>Hmong</option>
+<option>Hungarian</option>
+<option>Icelandic</option>
+<option>Igbo</option>
+<option>Indonesian</option>
+<option>Irish</option>
+<option>Italian</option>
+<option>Japanese</option>
+<option>Javanese</option>
+<option>Kannada</option>
+<option>Kazakh</option>
+<option>Khmer</option>
+<option>Korean</option>
+<option>Kurdish</option>
+<option>Kyrgyz</option>
+<option>Lao</option>
+<option>Latin</option>
+<option>Latvian</option>
+<option>Lithuanian</option>
+<option>Luxembourgish</option>
+<option>Macedonian</option>
+<option>Malagasy</option>
+<option>Malay</option>
+<option>Malayalam</option>
+<option>Maltese</option>
+<option>Maori</option>
+<option>Marathi</option>
+<option>Mongolian</option>
+<option>Myanmar (Burmese)</option>
+<option>Nepali</option>
+<option>Norwegian</option>
+<option>Nyanja (Chichewa)</option>
+<option>Pashto</option>
+<option>Persian</option>
+<option>Polish</option>
+<option>Portuguese (Portugal, Brazil)</option>
+<option>Punjabi</option>
+<option>Romanian</option>
+<option>Russian</option>
+<option>Samoan</option>
+<option>Scots Gaelic</option>
+<option>Serbian</option>
+<option>Sesotho</option>
+<option>Shona</option>
+<option>Sindhi</option>
+<option>Sinhala (Sinhalese)</option>
+<option>Slovak</option>
+<option>Slovenian</option>
+<option>Somali</option>
+<option>Spanish</option>
+<option>Sundanese</option>
+<option>Swahili</option>
+<option>Swedish</option>
+<option>Tagalog (Filipino)</option>
+<option>Tajik</option>
+<option>Tamil</option>
+<option>Telugu</option>
+<option>Thai</option>
+<option>Turkish</option>
+<option>Ukrainian</option>
+<option>Urdu</option>
+<option>Uzbek</option>
+<option>Vietnamese</option>
+<option>Welsh</option>
+<option>Xhosa</option>
+<option>Yiddish</option>
+<option>Yoruba</option>
+<option>Zulu</option>
+    
+    </select>
+                            <h6>TO:</h6>
+                            <select id="to" class="form-control">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<option>Czech</option>
+<option>Danish</option>
+<option>Dutch</option>
+<option>English</option>
+
+<option>Estonian</option>
+<option>Finnish</option>
+<option>French</option>
+
+<option>German</option>
+<option>Greek</option>
+
+<option>Hindi</option>
+
+<option>Hungarian</option>
+
+<option>Indonesian</option>
+
+<option>Italian</option>
+<option>Japanese</option>
+
+
+<option>Korean</option>
+
+
+
+<option>Norwegian</option>
+
+<option>Polish</option>
+<option>Portuguese </option>
+
+<option>Romanian</option>
+<option>Russian</option>
+
+
+<option>Slovak</option>
+
+<option>Spanish</option>
+
+<option>Swedish</option>
+
+
+
+
+<option>Turkish</option>
+
+
+<option>Vietnamese</option>
+
+    
+    </select>
+                            <textarea id="text" type="text" class="form-control" placeholder="text here.." rows="5"></textarea>
+                            <button type="button" class="btn" onclick="startButton()">Start</button>
+                            <button type="submit" class="btn" id="submit">Translate</button>
+                            <br>
+                            
+                            <div class="row"   id="result" onchange="sound()">
+                                Output appear here
+                                
+                            </div>
+                            <audio id="buzzer" src="" type="audio/mp3"></audio>
+                        </form>
+                        
+                    </div>
+                
+                    <div class="col-sm-4">
+                       
+                    </div>
+                
+                
+                
+            </div>    
+            
+		
+   
+</body>
+</html>

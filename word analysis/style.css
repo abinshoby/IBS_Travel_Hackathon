@@ -1,0 +1,56 @@
+body{
+	backgroundground:tomato;
+}
+
+*{
+	margin:0;
+	padding:0;
+	font-family:'lucida Grade',sans-serif;
+}
+a.logo{
+	text-decoration:none;
+	color:#ffffff;
+	font-size:22px;
+}
+#chart{
+	
+	width:90%;
+	margin:40px auto;
+	height:400px;
+	display:table;
+}
+header{
+	background:#333333;
+	padding:20px 0;
+	text-align:center;
+}
+#chart li{
+	display:table-cell;
+	vertical-align:bottom;
+	height:100%;
+	position:relative;
+}
+#chart li span{
+	background:#b6b6ff;
+	margin-left:10px;
+	margin-right:10px;
+	display:block;
+	height:50%;
+	animation-name:grow;
+	animation-duration:2s;
+	
+}
+#chart li span:before{
+	content:attr(title);
+	position:absolute;
+	top:100%;
+	padding:10px 0;
+}
+	
+@keyframes grow{
+	0%
+	{height:0;}
+}
+
+
+		

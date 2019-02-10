@@ -1,0 +1,48 @@
+<html><head>
+    <link rel="stylesheet" href="style.css">
+   <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <body><button id="click" class="btn"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
+    <div id="slider">
+        
+    </div>
+      <script>
+            $(document).ready(function(){
+                var st=0;
+                $("#click").click(function(){
+                    if(st==0){
+                        $("#slider").animate({
+                            left: "0px"
+                        },500)
+                        st=1;
+                    }
+                    else{
+                        $("#slider").animate({
+                            left: "-200px"
+                        },500)
+                        st=0;
+                    }
+                })
+            })
+        </script>  
+   </body>
+    <style>
+        #slider{
+            position: absolute;
+            left: -200px;
+            width: 200px;
+            bottom: 0px;
+            top: 0px;
+            background-color: #f3f3f3;
+        }
+        #click{
+            position: absolute;
+            left: 300px;
+            top: 0px;
+        }
+    </style>
+</html>

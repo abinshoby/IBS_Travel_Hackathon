@@ -1,0 +1,10 @@
+<?php
+//$new = fopen("tmp.txt","w");
+//fclose($new);
+$out=shell_exec("python summary.py");
+$myfile = fopen("tmp.txt", "r") or die("Unable to open file!");
+echo fread($myfile,filesize("tmp.txt"));
+fclose($myfile);
+
+
+?>

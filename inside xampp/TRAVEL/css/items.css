@@ -1,0 +1,47 @@
+.coating{
+	display: none;
+}
+.content .row{
+	position: relative;
+	left: 15px;
+	width: 100%;
+}
+#section{
+	position: relative;
+	display: inline-block;
+	height: 350px;
+	border: 1px solid #f3f3f3;
+	border-radius: 5px;
+	padding-left: 2px;
+	box-shadow: 2px 2px 15px rgba(255,255,255,1);
+}
+#picture{
+	position: relative;
+	top: 10px;
+	left: 20px;
+	height: 60%;
+	border: 3px solid transparent;
+	border-bottom-color: #f3f3f3;
+}
+#picture img{
+	height: 100%;
+	width: 100%;
+}
+#description{
+	position: relative;
+	top: 20px;
+	left: 20px;
+	font-family: 'Jura', sans-serif;
+}
+#info{
+	position: absolute;
+	text-align: center;
+	bottom: 5px;
+	margin-right: 25px;
+	font-family: 'Cabin', sans-serif;
+	font-size: 14px;
+	color: dimgray;
+}
+#info .col-4{
+	font-size: 25px;
+}
